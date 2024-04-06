@@ -1,7 +1,14 @@
+import { useState } from 'react';
+
+import { db } from './data/db';
+
 import Guitar from "./components/Guitar";
 import Header from "./components/Header";
 
 function App() {
+
+  const [data, setData] = useState(db);
+
   return (
     <>
       <Header />
@@ -11,7 +18,15 @@ function App() {
 
         <div className="row mt-5">
 
-          <Guitar />
+          { data.map(( guitar ) => (
+
+            <Guitar 
+              key={guitar.id}
+              guitar={guitar}
+            />
+
+          )) }
+
 
         </div>
       </main>
