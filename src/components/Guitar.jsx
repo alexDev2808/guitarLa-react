@@ -1,7 +1,8 @@
 
-export default function Guitar( { guitar }) {
+export default function Guitar( { guitar, addToCart }) {
 
     const { id, name, price, image, description } = guitar;
+
 
     return (
 
@@ -19,7 +20,10 @@ export default function Guitar( { guitar }) {
                 {description}
                 </p>
                 <p className="fw-black text-primary fs-3">${price}</p>
-                <button type="button" className="btn btn-dark w-100">
+                <button 
+                    onClick={() => addToCart(guitar) }
+                    type="button" 
+                    className="btn btn-dark w-100">
                 Agregar al Carrito
                 </button>
             </div>
