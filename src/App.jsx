@@ -69,7 +69,7 @@ function App() {
         }
       }
 
-      return updatedCart
+      return item
     })
 
     setCart(updatedCart)
